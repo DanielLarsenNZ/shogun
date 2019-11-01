@@ -14,3 +14,9 @@ Every minute, Shogun will invoke all requests it finds in the HAR file where:
 1. Browser did not retrieve from cache
 
 Contributions and Issues welcome.
+
+## Links and references
+
+Consumption Plan Cost Billing FAQ: <https://github.com/Azure/Azure-Functions/wiki/Consumption-Plan-Cost-Billing-FAQ>
+
+Measuring the cost of Azure Functions: <https://www.nigelfrank.com/blog/ask-the-expert-measuring-the-cost-of-azure-functions/>

@@ -1,0 +1,239 @@
+{
+    "$schema": "shogun_v1",
+    "entries": [
+        {
+            "order": {
+                "number": 1,
+                "delayMs": 0,
+                "delayIsAbsolute": false
+            },
+            "request": {
+                "method": "POST",
+                "url": "https://localhost:44334/api/series?template=foo",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "json": {
+                        "Name": "Daniel",
+                        "Email": "daniel@localtest.me",
+                        "Mobile": "123456790",
+                        "StartDate": "2020-11-01T00:00:00",
+                        "TimeOfDay": "Mid-morning",
+                        "Goal": "Fitness"
+                    }
+                }
+            }
+        },
+        {
+            "order": {
+                "number": 2,
+                "delayMs": 0,
+                "delayIsAbsolute": false
+            },
+            "request": {
+                "method": "GET",
+                "url": "https://localhost:44334/api/series",
+                "headers": [ ]
+            }
+        },
+        {
+            "order": {
+                "number": 1,
+                "delayMs": 0,
+                "delayIsAbsolute": false
+            },
+            "request": {
+                "method": "POST",
+                "url": "https://localhost:44334/api/series?template=foo",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "json": {
+                        "Name": "Daniel",
+                        "Email": "daniel@localtest.me",
+                        "Mobile": "123456790",
+                        "StartDate": "2020-11-01T00:00:00",
+                        "TimeOfDay": "Mid-morning",
+                        "Goal": "Fitness"
+                    }
+                }
+            }
+        },
+        {
+            "order": {
+                "number": 2,
+                "delayMs": 0,
+                "delayIsAbsolute": false
+            },
+            "request": {
+                "method": "GET",
+                "url": "https://localhost:44334/api/series",
+                "headers": [ ]
+            }
+        },
+        {
+            "order": {
+                "number": 1,
+                "delayMs": 0,
+                "delayIsAbsolute": false
+            },
+            "request": {
+                "method": "POST",
+                "url": "https://localhost:44334/api/series?template=foo",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "json": {
+                        "Name": "Daniel",
+                        "Email": "daniel@localtest.me",
+                        "Mobile": "123456790",
+                        "StartDate": "2020-11-01T00:00:00",
+                        "TimeOfDay": "Mid-morning",
+                        "Goal": "Fitness"
+                    }
+                }
+            }
+        },
+        {
+            "order": {
+                "number": 2,
+                "delayMs": 0,
+                "delayIsAbsolute": false
+            },
+            "request": {
+                "method": "GET",
+                "url": "https://localhost:44334/api/series",
+                "headers": [ ]
+            }
+        },
+        {
+            "order": {
+                "number": 1,
+                "delayMs": 0,
+                "delayIsAbsolute": false
+            },
+            "request": {
+                "method": "POST",
+                "url": "https://localhost:44334/api/series?template=foo",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "json": {
+                        "Name": "Daniel",
+                        "Email": "daniel@localtest.me",
+                        "Mobile": "123456790",
+                        "StartDate": "2020-11-01T00:00:00",
+                        "TimeOfDay": "Mid-morning",
+                        "Goal": "Fitness"
+                    }
+                }
+            }
+        },
+        {
+            "order": {
+                "number": 2,
+                "delayMs": 0,
+                "delayIsAbsolute": false
+            },
+            "request": {
+                "method": "GET",
+                "url": "https://localhost:44334/api/series",
+                "headers": [ ]
+            }
+        },
+        {
+            "order": {
+                "number": 1,
+                "delayMs": 0,
+                "delayIsAbsolute": false
+            },
+            "request": {
+                "method": "POST",
+                "url": "https://localhost:44334/api/series?template=foo",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "json": {
+                        "Name": "Daniel",
+                        "Email": "daniel@localtest.me",
+                        "Mobile": "123456790",
+                        "StartDate": "2020-11-01T00:00:00",
+                        "TimeOfDay": "Mid-morning",
+                        "Goal": "Fitness"
+                    }
+                }
+            }
+        },
+        {
+            "order": {
+                "number": 2,
+                "delayMs": 0,
+                "delayIsAbsolute": false
+            },
+            "request": {
+                "method": "GET",
+                "url": "https://localhost:44334/api/series",
+                "headers": [ ]
+            }
+        },
+        {
+            "order": {
+                "number": 1,
+                "delayMs": 0,
+                "delayIsAbsolute": false
+            },
+            "request": {
+                "method": "POST",
+                "url": "https://localhost:44334/api/series?template=foo",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "json": {
+                        "Name": "Daniel",
+                        "Email": "daniel@localtest.me",
+                        "Mobile": "123456790",
+                        "StartDate": "2020-11-01T00:00:00",
+                        "TimeOfDay": "Mid-morning",
+                        "Goal": "Fitness"
+                    }
+                }
+            }
+        },
+        {
+            "order": {
+                "number": 2,
+                "delayMs": 0,
+                "delayIsAbsolute": false
+            },
+            "request": {
+                "method": "GET",
+                "url": "https://localhost:44334/api/series",
+                "headers": [ ]
+            }
+        }
+    ]
+}

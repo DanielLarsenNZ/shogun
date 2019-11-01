@@ -14,10 +14,10 @@ function SecondsMeasure ($Measure) {
 
 $TIMEOUT_SECONDS = 2
 $MAX_REQUEST_COUNT = 0
-$INPUT_HAR_FILEPATH = './1947.har'
+$INPUT_FILEPATH = './shogun.json'
 #$OUTPUT_HAR_FILEPATH = "../_work/1947-$(New-Guid)-output.har"
 
-$har = Get-Content -Path $INPUT_HAR_FILEPATH | ConvertFrom-Json
+$json = Get-Content -Path $INPUT_FILEPATH | ConvertFrom-Json
 
 $output = @{log = @{ 
     entries = ( @{ }, @{ } ) } # not sure how to instantiate an empty array here
@@ -26,15 +26,15 @@ $output = @{log = @{
 
 $i = 0
 
-
 $bigMeasure = Measure-Command {
-    foreach ($entry in $har.log.entries) {
+    foreach ($entry in $json.entries) {
 
-        # only GETs and HEADs
-        if ($entry.request.method -notin 'GET', 'HEAD') { continue }
+        # only GETs, HEADs, POSTS for now
+        if ($entry.request.method -notin 'GET', 'HEAD', 'POST') { continue }
 
+        # HAR logic
         # if browser retrieved from cache, ignore
-        if ($entry._fromCache -ne $null) { continue }
+        # if ($entry._fromCache -ne $null) { continue }
 
         # if max entry limit reached, quit
         if ($MAX_REQUEST_COUNT -gt 0 -and $i -gt $MAX_REQUEST_COUNT) { break }
@@ -50,11 +50,25 @@ $bigMeasure = Measure-Command {
             }
         }
         
+        # Map headers
+        $headers = $entry.request.headers | % { @{ $_.name = $_.value } }
+
         $entryMeasure = Measure-Command {
             try {
                 Write-Host "$($entry.request.method) $($entry.request.url)" -ForegroundColor Yellow
-                $response = Invoke-WebRequest -Uri $entry.request.url -Method $entry.request.method -UseBasicParsing `
-                    -TimeoutSec $TIMEOUT_SECONDS
+                
+                switch ($entry.request.method) {
+                    { ( $_ -eq 'GET' ) -or ( $_ -eq 'HEAD' ) } {
+                        $response = Invoke-WebRequest -Uri $entry.request.url -Method $entry.request.method -UseBasicParsing `
+                            -TimeoutSec $TIMEOUT_SECONDS -Headers $headers
+                    }
+                    'POST' {
+                        $response = Invoke-WebRequest -Uri $entry.request.url -Method $entry.request.method -UseBasicParsing `
+                            -TimeoutSec $TIMEOUT_SECONDS -Headers $headers `
+                            -Body ( $entry.request.body.json | ConvertTo-Json )
+                    }
+                    Default { continue }
+                }
 
                 Write-Host "$($response.StatusCode) $($response.StatusDescription)" -ForegroundColor White
                 $outEntry.response = @{ 
