@@ -20,3 +20,5 @@ Contributions and Issues welcome.
 Consumption Plan Cost Billing FAQ: <https://github.com/Azure/Azure-Functions/wiki/Consumption-Plan-Cost-Billing-FAQ>
 
 Measuring the cost of Azure Functions: <https://www.nigelfrank.com/blog/ask-the-expert-measuring-the-cost-of-azure-functions/>
+
+Everything you wanted to know about PSCustomObject: <https://powershellexplained.com/2016-10-28-powershell-everything-you-wanted-to-know-about-pscustomobject>
