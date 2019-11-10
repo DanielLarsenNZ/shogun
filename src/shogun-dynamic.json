@@ -29,7 +29,7 @@
             },
             "out": {
                 "id": "id",
-                "name": "name"
+                "etag": "eTag"
             }
         },
         {
@@ -41,7 +41,48 @@
             "request": {
                 "method": "GET",
                 "url": "https://localhost:44334/api/series/{id}",
-                "headers": [ ]
+                "headers": []
+            }
+        },
+        {
+            "order": {
+                "number": 3,
+                "delayMs": 0,
+                "delayIsAbsolute": false
+            },
+            "request": {
+                "method": "PUT",
+                "url": "https://localhost:44334/api/series/{id}?ifMatch={etag}",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "json": {
+                        "Id": "{id}",
+                        "Pk": "{id}",
+                        "Name": "Daniel 2",
+                        "Email": "daniel@localtest.me",
+                        "Mobile": "123456790",
+                        "StartDate": "2020-11-01T00:00:00",
+                        "TimeOfDay": "Mid-morning",
+                        "Goal": "Fitness"
+                    }
+                }
+            }
+        },
+        {
+            "order": {
+                "number": 3,
+                "delayMs": 0,
+                "delayIsAbsolute": false
+            },
+            "request": {
+                "method": "GET",
+                "url": "https://localhost:44334/api/series/{id}",
+                "headers": []
             }
         }
     ]

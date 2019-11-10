@@ -31,10 +31,6 @@ $i = 0
 
 $bigMeasure = Measure-Command {
     foreach ($entry in $json.entries) {
-
-        # only GETs, HEADs, POSTS for now
-        if ($entry.request.method -notin 'GET', 'HEAD', 'POST') { continue }
-
         # HAR logic
         # if browser retrieved from cache, ignore
         # if ($entry._fromCache -ne $null) { continue }
@@ -77,7 +73,7 @@ $bigMeasure = Measure-Command {
                         $response = Invoke-WebRequest -Uri $url -Method $entry.request.method -UseBasicParsing `
                             -TimeoutSec $TIMEOUT_SECONDS -Headers $headers
                     }
-                    'POST' {
+                    { ( $_ -eq 'POST' ) -or ( $_ -eq 'PUT' ) } {
                         $response = Invoke-WebRequest -Uri $url -Method $entry.request.method -UseBasicParsing `
                             -TimeoutSec $TIMEOUT_SECONDS -Headers $headers `
                             -Body ( $entry.request.body.json | ConvertTo-Json )
