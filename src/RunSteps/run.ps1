@@ -54,7 +54,7 @@ $bigMeasure = Measure-Command {
             try {
                 Write-Host "$($entry.request.method) $($entry.request.url)" -ForegroundColor Yellow
                 $response = Invoke-WebRequest -Uri $entry.request.url -Method $entry.request.method -UseBasicParsing `
-                    -TimeoutSec $TIMEOUT_SECONDS
+                    -TimeoutSec $TIMEOUT_SECONDS -SkipHttpErrorCheck
 
                 Write-Host "$($response.StatusCode) $($response.StatusDescription)" -ForegroundColor White
                 $outEntry.response = @{ 
